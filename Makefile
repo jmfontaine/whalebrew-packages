@@ -26,6 +26,10 @@ clean-test:
 		whalebrew uninstall $${package} ; \
 	done
 
+## Install the provided package and version (make install PACKAGE=dummy VERSION=0.1.0)
+install:
+	whalebrew install jmfontaine/whalebrew-$(PACKAGE):$(VERSION)
+
 ## Publish the Docker image for the provided package and version (make publish PACKAGE=dummy VERSION=0.1.0)
 publish:
 	docker push jmfontaine/whalebrew-$(PACKAGE):$(VERSION)
